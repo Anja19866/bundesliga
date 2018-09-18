@@ -1,0 +1,103 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: medium;
+    max-width: 100%;
+    background-color: lightgrey;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    width: 95%;
+    line-height: 50px;
+    padding-left: 15px;
+}
+
+a:hover, a:focus {
+    background-color: darkorange;
+    color: white;
+    /*width: 89%;*/
+}
+
+.current {
+    background-color: darkorange;
+}
+
+.current a {
+    color: white;
+}
+
+.container {
+    left: 7.5%;
+    margin-right: 50px;
+    position: relative;
+    float: left;
+}
+
+h1, h2 {
+    margin-left: 15px;
+    position: relative;
+}
+
+h3 {
+    font-size: medium;
+    position: relative;
+    background-color: darkorange;
+    display: inline-block;
+    width: 87.5%;
+    padding: 15px 15px;
+    margin-top: 15px;
+    border: 2px solid transparent;
+}
+
+img {
+    vertical-align: middle;
+}
+
+label {
+    font-size: medium;
+}
+
+ul {
+    margin-top: -14px;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-left: -40px;
+    list-style: none;
+    border: 2px solid transparent;
+    border-bottom: 2px solid lightgrey;
+    background-color: white;
+    color: black;
+    width: 17rem;
+}
+
+/*#list {*/
+    /*width: 55%;*/
+    /*left: 12.5%;*/
+    /*position: relative;*/
+/*}*/
+
+table {
+    margin-top: 30px;
+}
+
+th {
+    text-align: left;
+    background-color: darkorange;
+    padding: 15px 15px;
+    border: 2px solid transparent;
+}
+
+td {
+    width: 17rem;
+}
+
+.result {
+    padding-left: 15px;
+}
+.teams {
+    background-color: white;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>teamTwig</title>
+</head>
+<body>
+<a href="#">Home</a>
+<a href="#">Tabelle</a>
+<a href="#">Spiele</a>
+<div class="container">
+    <h2>All Teams</h2>
+    <h3>Choose Team</h3>
+    <ul>
+        {% for team in teams %}
+            <li class="{{ (team == selectedTeam) ? 'current' : '' }}">
+                <a href="?id={{ team.id }}">
+                    <img src="{{ team.icon }}" width='15'> {{ team.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="container">
+
+    <h2>Selected Team: <img src="{{ selectedTeam.icon }}" width='25'> {{ selectedTeam.name }}</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Results or Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for selectedMatch in selectedMatches %}
+
+            {#<pre>#}
+                {#{{ dump(selectedTeam) }}#}
+            {#</pre>#}
+            <tr>
+                <td class="teams {{ (selectedTeam == selectedMatch.team1.id) ? 'current' : '' }}">
+                    <a href="?id={{ selectedMatch.team1.id }}">
+                        <img src="{{ selectedMatch.team1.icon }}"
+                                       width='15'/> {{ selectedMatch.team1.name }}
+                    </a>
+                </td>
+                <td class="teams {{ (selectedTeam == selectedMatch.team2.id) ? 'current' : '' }}">
+                    <a href="?id={{ selectedMatch.team2.id }}">
+                        <img src="{{ selectedMatch.team2.icon }}"
+                                       width='15'/> {{ selectedMatch.team2.name }}
+                    </a>
+                </td>
+                <td class="teams result">
+                    {% if selectedMatch.matchIsFinished == true %}
+                        {{ selectedMatch.halfTimeResult.pointsTeam1 }}:{{ selectedMatch.halfTimeResult.pointsTeam2 }}
+                        ({{ selectedMatch.endResult.pointsTeam1 }}:{{ selectedMatch.endResult.pointsTeam2 }})
+                    {% else %}
+                        {{ selectedMatch.matchDateTime | date('d.m.Y H:i') }} Uhr
+                    {% endif %}
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

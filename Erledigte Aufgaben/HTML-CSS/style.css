@@ -1,0 +1,104 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: medium;
+    max-width: 100%;
+    background-color: lightgrey;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    width: 89%;
+    /*padding: 15px 15px;*/
+    line-height: 50px;
+}
+
+a:hover, a:focus {
+    background-color: darkorange;
+    color: white;
+}
+
+.current {
+    background-color: darkorange;
+}
+
+.current a {
+    color: white;
+}
+
+.container {
+    left: 12.5%;
+    margin-right: 50px;
+    position: relative;
+    float: left;
+}
+
+h1, h2 {
+    margin-left: 15px;
+    position: relative;
+}
+
+h3 {
+    font-size: medium;
+    position: relative;
+    background-color: darkorange;
+    display: inline-block;
+    width: 89%;
+    padding: 15px 15px;
+    margin-top: 15px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+form {
+    margin: 50px 35px;
+    left: 12.5%;
+    position: relative;
+}
+
+input {
+    display: inline-block;
+    font-size: medium;
+    padding: 3px;
+}
+
+label {
+    font-size: medium;
+}
+
+ul {
+    margin-top: -14px;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-left: -40px;
+    list-style: none;
+    border-bottom: 2px solid lightgrey;
+    background-color: white;
+    color: black;
+}
+
+#list {
+    width: 55%;
+    left: 12.5%;
+    position: relative;
+}
+
+table {
+    margin-top: 30px;
+}
+
+th {
+    text-align: left;
+    background-color: darkorange;
+    padding: 15px 15px;
+}
+
+.teams {
+    padding: 15px 15px;
+    background-color: white;
+}

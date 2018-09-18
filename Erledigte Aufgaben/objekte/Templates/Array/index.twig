@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../HTML-CSS/style.css">
+    <title>teamTwig</title>
+</head>
+<body>
+<div class="container">
+    <h2>All Teams</h2>
+    <h3>Choose Team</h3>
+    <ul>
+        {% for team in teams %}
+            <li class="{{ (team == selectedTeam) ? 'current' : '' }}">
+                <a href="?id={{ team.TeamId }}">
+                    <img src="{{ team.TeamIconUrl }}" width='15'> {{ team.TeamName }}
+                </a>
+            </li>
+            <!--<h2>{{ dump(match) }}</h2>-->
+        {% endfor %}
+    </ul>
+</div>
+<div class="container">
+
+    <h2>Selected Team: <img src="{{ selectedTeam.TeamIconUrl }}" width='25'> {{ selectedTeam.TeamName }}</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Results or Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for selectedMatch in selectedMatches %}
+            <tr>
+                <td class='teams'><img src="{{ selectedMatch.Team1.TeamIconUrl }}"
+                                       width='15'/> {{ selectedMatch.Team1.TeamName }} </td>
+                <td class='teams'><img src="{{ selectedMatch.Team2.TeamIconUrl }}"
+                                       width='15'/> {{ selectedMatch.Team2.TeamName }} </td>
+                <td class="teams">
+                    {% if selectedMatch.MatchResults.1.PointsTeam1 is defined %}
+                        {{ selectedMatch.MatchResults.1.PointsTeam1 }}:{{ selectedMatch.MatchResults.1.PointsTeam2 }}
+                        ({{ selectedMatch.MatchResults.0.PointsTeam1 }}:{{ selectedMatch.MatchResults.0.PointsTeam2 }})
+                    {% else %}
+                        {{ selectedMatch.MatchDateTimeUTC | date('d.m.Y H:i', option_timezone_convert) }} Uhr
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

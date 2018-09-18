@@ -1,0 +1,14 @@
+{
+    "repositories": [{
+        "type": "composer",
+        "url": "https://nerd:ahoi@composer.koempf24.de"
+    }],
+    "require": {
+        "symfony/console": "^4.1",
+        "twig/twig": "^2.0",
+        "ext-json": "*"
+    },
+    "name": "koempf/anja",
+    "license": "",
+    "description": ""
+}
