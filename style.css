@@ -9,31 +9,33 @@ body {
 
 }
 
-h2 {
+h2, h4 {
     background-color: darkorange;
     color: white;
     padding: 15px 15px;
     margin-left: -15px;
-    margin-top: 2rem;
     margin-right: -15px;
     border: 2px solid lightgrey;
 }
 
-a {
+h2 {
+    margin-top: 2rem;
+}
+
+a, .td {
     color: black;
     text-decoration: none;
     display: inline-block;
     line-height: 50px;
     padding-left: 15px;
-
 }
 
 a:hover, a:focus {
     text-decoration: none;
     background-color: darkorange;
     color: white;
-    /*display: inline-block;*/
-    /*line-height: 50px;*/
+    display: inline-block;
+    line-height: 50px;
 }
 
 .current a{
@@ -46,39 +48,31 @@ img {
     vertical-align: middle;
 }
 
-.team {
+.td {
+    margin: 0;
+    padding: 0;
+}
+
+.team, .matches, .result {
     list-style: none;
     border: 2px solid lightgrey;
     background-color: white;
     color: black;
     padding: inherit;
+    width: 100%;
 }
 
-.team:hover, .team:focus {
+.result {
+    padding-left: 15px;
+}
+
+.team:hover, .team:focus, .matches:hover, .matches:focus {
     text-decoration: none;
     background-color: darkorange;
     color: white;
     width: 100%;
 }
 
-table {
-    margin-top: 30px;
-}
-
-th {
-    text-align: left;
-    background-color: darkorange;
-    padding: 15px 15px;
-    border: 2px solid transparent;
-}
-
-td {
-    width: 17rem;
-}
-
-.result {
-    padding-left: 15px;
-}
-.teams {
-    background-color: white;
+.th {
+    margin: -8px 0 -8px 0 ;
 }

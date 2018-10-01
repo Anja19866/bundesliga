@@ -46,49 +46,54 @@
     </div>
 </div>
 <div class="container">
-
-    <h2>Ergebnisse von <img src="{{ selectedTeam.icon }}" width='25'> {{ selectedTeam.name }}:</h2>
-
-    <table>
-        <thead>
-        <tr>
-            <th>Team 1</th>
-            <th>Team 2</th>
-            <th>Results or Date</th>
-        </tr>
-        </thead>
-        <tbody>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Ergebnisse von <img src="{{ selectedTeam.icon }}" width='25'> {{ selectedTeam.name }}:</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 th">
+            <h4>Team 1</h4>
+        </div>
+        <div class="col-md-4 th">
+            <h4>Team 2</h4>
+        </div>
+        <div class="col-md-4 th">
+            <h4>Ergebnis oder Datum</h4>
+        </div>
+    </div>
+    <div class="row">
         {% for selectedMatch in selectedMatches %}
 
             {#<pre>#}
                 {#{{ dump(selectedTeam) }}#}
             {#</pre>#}
-            <tr>
-                <td class="teams {{ (selectedTeam == selectedMatch.team1.id) ? 'current' : '' }}">
-                    <a href="?id={{ selectedMatch.team1.id }}">
-                        <img src="{{ selectedMatch.team1.icon }}"
-                                       width='15'/> {{ selectedMatch.team1.name }}
-                    </a>
-                </td>
-                <td class="teams {{ (selectedTeam == selectedMatch.team2.id) ? 'current' : '' }}">
-                    <a href="?id={{ selectedMatch.team2.id }}">
-                        <img src="{{ selectedMatch.team2.icon }}"
-                                       width='15'/> {{ selectedMatch.team2.name }}
-                    </a>
-                </td>
-                <td class="teams result">
-                    {% if selectedMatch.matchIsFinished == true %}
-                        {{ selectedMatch.halfTimeResult.pointsTeam1 }}:{{ selectedMatch.halfTimeResult.pointsTeam2 }}
-                        ({{ selectedMatch.endResult.pointsTeam1 }}:{{ selectedMatch.endResult.pointsTeam2 }})
-                    {% else %}
-                        {{ selectedMatch.matchDateTime | date('d.m.Y H:i') }} Uhr
-                    {% endif %}
-                </td>
-            </tr>
-
+        <div class="col-md-4 td">
+            <div class="matches {{ (selectedTeam == selectedMatch.team1.id) ? 'current' : '' }}">
+                <a href="?id={{ selectedMatch.team1.id }}">
+                    <img src="{{ selectedMatch.team1.icon }}" width='15'> {{ selectedMatch.team1.name }}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 td">
+            <div class="matches {{ (selectedTeam == selectedMatch.team2.id) ? 'current' : '' }}">
+                <a href="?id={{ selectedMatch.team2.id }}">
+                    <img src="{{ selectedMatch.team2.icon }}" width='15'> {{ selectedMatch.team2.name }}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 td">
+            <div class="result">
+                {% if selectedMatch.matchIsFinished == true %}
+                    {{ selectedMatch.halfTimeResult.pointsTeam1 }}:{{ selectedMatch.halfTimeResult.pointsTeam2 }}
+                    ({{ selectedMatch.endResult.pointsTeam1 }}:{{ selectedMatch.endResult.pointsTeam2 }})
+                {% else %}
+                    {{ selectedMatch.matchDateTime | date('d.m.Y H:i') }} Uhr
+                {% endif %}
+            </div>
+        </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
