@@ -1,84 +1,65 @@
 body {
     font-family: Verdana, sans-serif;
     font-size: medium;
-    max-width: 100%;
     background-color: lightgrey;
+}
+
+.header {
+    margin-top: 2rem;
+
+}
+
+h2 {
+    background-color: darkorange;
+    color: white;
+    padding: 15px 15px;
+    margin-left: -15px;
+    margin-top: 2rem;
+    margin-right: -15px;
+    border: 2px solid lightgrey;
 }
 
 a {
     color: black;
     text-decoration: none;
     display: inline-block;
-    width: 95%;
     line-height: 50px;
     padding-left: 15px;
+
 }
 
 a:hover, a:focus {
+    text-decoration: none;
     background-color: darkorange;
     color: white;
-    /*width: 89%;*/
+    /*display: inline-block;*/
+    /*line-height: 50px;*/
 }
 
-.current {
-    background-color: darkorange;
-}
-
-.current a {
+.current a{
     color: white;
-}
-
-.container {
-    left: 7.5%;
-    margin-right: 50px;
-    position: relative;
-    float: left;
-}
-
-h1, h2 {
-    margin-left: 15px;
-    position: relative;
-}
-
-h3 {
-    font-size: medium;
-    position: relative;
     background-color: darkorange;
-    display: inline-block;
-    width: 87.5%;
-    padding: 15px 15px;
-    margin-top: 15px;
-    border: 2px solid transparent;
+    width: 100%;
 }
 
 img {
     vertical-align: middle;
 }
 
-label {
-    font-size: medium;
-}
-
-ul {
-    margin-top: -14px;
-    margin-bottom: 30px;
-}
-
-li {
-    margin-left: -40px;
+.team {
     list-style: none;
-    border: 2px solid transparent;
-    border-bottom: 2px solid lightgrey;
+    border: 2px solid lightgrey;
     background-color: white;
     color: black;
-    width: 17rem;
+    padding: inherit;
 }
 
-/*#list {*/
-    /*width: 55%;*/
-    /*left: 12.5%;*/
-    /*position: relative;*/
-/*}*/
+.team:hover, .team:focus {
+    text-decoration: none;
+    background-color: darkorange;
+    color: white;
+    width: 100%;
+}
 
 table {
     margin-top: 30px;
