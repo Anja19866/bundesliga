@@ -9,7 +9,7 @@
 <body>
 
 <div class="container header">
-    <nav class="navbar navbar-light" style="background-color: lightgrey">
+    <nav class="navbar navbar-light" style="background-color: slategray; color: white;">
         <!-- Navbar content -->
         <img src="LogoLiga.png" width="300"><h1>Männer-Fußball</h1>
         <ul class="nav justify-content-center">
@@ -17,21 +17,21 @@
                 <a class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#teams">Teams</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#spiele">Spiele</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+            {#<li class="nav-item">#}
+                {#<a class="nav-link disabled" href="#">Disabled</a>#}
+            {#</li>#}
         </ul>
     </nav>
 </div>
-<div class="container">
+<div class="container" id="teams">
     <div class="row">
         <div class="col-md-12">
-            <h2>Mannschaft auswählen</h2>
+            <h2>Team auswählen</h2>
         </div>
     </div>
 
@@ -45,7 +45,7 @@
             {% endfor %}
     </div>
 </div>
-<div class="container">
+<div class="container" id="spiele">
     <div class="row">
         <div class="col-md-12">
             <h2>Ergebnisse von <img src="{{ selectedTeam.icon }}" width='25'> {{ selectedTeam.name }}:</h2>
