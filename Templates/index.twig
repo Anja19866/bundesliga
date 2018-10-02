@@ -37,6 +37,7 @@
 
     <div class="row">
         {% for team in teams %}
+
             <div class="team col-md-4 {{ (team == selectedTeam) ? 'current' : '' }}">
                 <a href="?id={{ team.id }}">
                     <img src="{{ team.icon }}" width='15'> {{ team.name }}
